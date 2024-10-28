@@ -5,18 +5,26 @@ import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
 
-	// TODO: objektvariable 
-
+	private Innlegg[] tabell;
+	private int nesteledig;
+	
+	
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		tabell = new Innlegg[20];
 	}
+		
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		tabell = new Innlegg[lengde];
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		int antall=0;
+		for (int i = 0; i<tabell.length; i++) {
+			if (!(tabell[i].equals(""))) {
+				antall++;
+			}
+		} return antall;
 	}
 	
 	public Innlegg[] getSamling() {
