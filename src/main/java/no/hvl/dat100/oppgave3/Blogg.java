@@ -28,13 +28,13 @@ public class Blogg {
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
+		return tabell;
 
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		
 	}
 
 	public boolean finnes(Innlegg innlegg) {
