@@ -33,48 +33,45 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
+		for (int i = 0; i<tabell.length; i++) {
+			if (innlegg.erLik(tabell[i])) {
+				return i;
+			}
+			} return -1;
+			
+		}
 
 		
-	}
+	
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		boolean nja = false;
+		if (finnInnlegg(innlegg) != -1) {
+			nja = true;
+		} return nja;
+
+
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		boolean nja = false;
+		for (int i = 0; i<tabell.length; i++) {
+			if (tabell[i] == null) {
+				nja = true;
+				 
+			}
+		} return nja;
+	 
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		
 	}
 	
 	public String toString() {
 		throw new UnsupportedOperationException(TODO.method());
-	}
-
-	// valgfrie oppgaver nedenfor
-	
-	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
-	}
-	
-	public boolean leggTilUtvid(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
-		
-	}
-	
-	public boolean slett(Innlegg innlegg) {
-		
-		throw new UnsupportedOperationException(TODO.method());
-	}
-	
-	public int[] search(String keyword) {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
 	}
 }
