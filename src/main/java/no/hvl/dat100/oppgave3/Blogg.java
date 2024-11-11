@@ -21,7 +21,7 @@ public class Blogg {
 	public int getAntall() {
 		int antall=0;
 		for (int i = 0; i<tabell.length; i++) {
-			if (!(tabell[i].equals(""))) {
+			if (tabell[i] != null) {
 				antall++;
 			}
 		} return antall;
@@ -34,7 +34,7 @@ public class Blogg {
 	
 	public int finnInnlegg(Innlegg innlegg) {
 		for (int i = 0; i<tabell.length; i++) {
-			if (innlegg.erLik(tabell[i])) {
+			if (tabell[i] != null && innlegg.erLik(tabell[i])) {
 				return i;
 			}
 			} return -1;
@@ -55,23 +55,37 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		boolean nja = false;
 		for (int i = 0; i<tabell.length; i++) {
 			if (tabell[i] == null) {
-				nja = true;
+				return true;
 				 
 			}
-		} return nja;
+		} return false;
 	 
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
+		if (finnes(innlegg) == false && ledigPlass() == true) {
+			for (int i=0; i<tabell.length; i++) {
+				if (tabell[i] == null) {
+				tabell[i] = innlegg;
+				return true;
+			}}
+
+			}return false;
 
 		
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String str = "";
+		str = String.valueOf(getAntall()) + "\n";
+		for (Innlegg innlegg : tabell) {
+			if (innlegg != null) {
+				str += innlegg.toString();
+			}
+		}return str;
+
 	}
 }
